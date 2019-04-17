@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TitleStyle"
+        android:text="设置中心"/>
+
+    <com.example.mobilesafe.View.SettingItemView
+        xmlns:mobilesafe="http://schemas.android.com/apk/res/com.example.mobilesafe"
+        android:id="@+id/siv_updata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        mobilesafe:destitle="自动更新设置"
+        mobilesafe:desoff="自动更新已关闭"
+        mobilesafe:deson="自动更新已开启">
+    </com.example.mobilesafe.View.SettingItemView>
+    <com.example.mobilesafe.View.SettingItemView
+        xmlns:mobilesafe="http://schemas.android.com/apk/res/com.example.mobilesafe"
+        android:id="@+id/siv_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        mobilesafe:destitle="来电显示号码归属地"
+        mobilesafe:desoff="来电号码归属地已关闭"
+        mobilesafe:deson="来电号码归属地已开启">
+    </com.example.mobilesafe.View.SettingItemView>
+    <com.example.mobilesafe.View.SettingClickView
+
+        android:id="@+id/scv_toast_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.example.mobilesafe.View.SettingClickView>
+    <com.example.mobilesafe.View.SettingClickView
+
+        android:id="@+id/scv_toast_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.example.mobilesafe.View.SettingClickView>
+
+    <com.example.mobilesafe.View.SettingItemView
+        xmlns:mobilesafe="http://schemas.android.com/apk/res/com.example.mobilesafe"
+        android:id="@+id/siv_blacknumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        mobilesafe:destitle="黑名单拦截设置"
+        mobilesafe:desoff="黑名单拦截已关闭"
+        mobilesafe:deson="黑名单拦截已开启">
+    </com.example.mobilesafe.View.SettingItemView>
+
+    <com.example.mobilesafe.View.SettingItemView
+        xmlns:mobilesafe="http://schemas.android.com/apk/res/com.example.mobilesafe"
+        android:id="@+id/siv_applock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        mobilesafe:destitle="程序锁设置"
+        mobilesafe:desoff="程序锁已关闭"
+        mobilesafe:deson="程序锁已开启">
+    </com.example.mobilesafe.View.SettingItemView>
+
+
+</LinearLayout>

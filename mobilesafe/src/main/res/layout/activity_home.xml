@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/TitleStyle"
+        android:text="功能列表" />
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="世界，你好！世界，你好！世界，你好！世界，你好！世界，你好！世界，你好！世界，你好！"-->
+    <!--android:padding="5dp"-->
+    <!--android:singleLine="true"-->
+    <!--android:ellipsize="marquee"-->
+    <!--android:marqueeRepeatLimit="marquee_forever"-->
+    <!--android:focusable="true"-->
+    <!--android:focusableInTouchMode="true"/>-->
+    <com.example.mobilesafe.View.FocusTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="5dp"
+        android:singleLine="true"
+        android:text="世界，你好！世界，你好！世界，你好！世界，你好！世界，你好！世界，你好！世界，你好！" />
+
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/gv_home"
+        android:numColumns="3"
+        android:verticalSpacing="10dp"></GridView>
+
+</LinearLayout>

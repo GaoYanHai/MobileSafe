@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+        style="@style/TitleStyle"
+        android:text="进程管理"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_process_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="进程总数"/>
+
+        <TextView
+            android:id="@+id/tv_memory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="剩余/总数"/>
+    </RelativeLayout>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+    <ListView
+        android:id="@+id/lv_process_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
+    <TextView
+        android:background="#ccc"
+        android:textSize="18sp"
+        android:id="@+id/tv_process_des"
+        android:textColor="#000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</FrameLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bt_all"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="全选"/>
+
+        <Button
+            android:id="@+id/bt_reverse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="反选"/>
+
+        <Button
+            android:id="@+id/bt_clear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="一键清理"/>
+
+        <Button
+            android:id="@+id/bt_setting"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="设置"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

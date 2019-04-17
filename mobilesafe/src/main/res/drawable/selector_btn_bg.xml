@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--按下的时候-->
+<item android:state_pressed="true" android:drawable="@drawable/function_greenbutton_pressed"/>
+    <!--正常的时候-->
+<item  android:drawable="@drawable/function_greenbutton_normal"/>
+</selector>

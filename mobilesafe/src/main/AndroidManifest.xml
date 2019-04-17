@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.mobilesafe">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 读写SD卡的权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!--对电话状态的监听-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <!-- 接收开启启动广播的权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <!-- 发送短信 -->
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+
+    <!-- 接收短信 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <!-- 获取gps坐标的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <!-- 允许模拟器模拟位置坐标的权限 -->
+
+
+    <!-- 网络定位的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!--震动的权限-->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <!--在窗体上挂在view的权限-->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW"/>
+
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <!--获取任务栈-->
+    <!--<uses-permission android:name="android.permission.GET_TASKS"/>-->
+    <!--获取应用缓存的信息-->
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+
+    <!--<uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>-->
+    <!--系统级应用才可以用-->
+    <!--<uses-permission android:name="android.permission.DELETE_CACHE_FILES"/>-->
+
+    <application
+        android:name=".Global.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.HOME"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".SettingActivity"/>
+        <activity android:name=".SetupOverActivity"/>
+        <activity android:name=".Setup1Activity"/>
+        <activity android:name=".Setup2Activity"/>
+        <activity android:name=".Setup3Activity"/>
+        <activity android:name=".Setup4Activity"/>
+        <activity android:name=".ContactListActivity"/>
+        <activity android:name=".WipeDataActivity"/>
+        <activity android:name=".LockScreenActivity"/>
+        <activity android:name=".AToolActivity"/>
+        <activity android:name=".QueryAddressActivity"/>
+        <activity
+            android:name=".ToastLocationActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name=".BlackNumberActivity"/>
+        <activity android:name=".AppManagerActivity"/>
+        <activity android:name=".ProcessManagerActivity"/>
+        <activity android:name=".CommonNumberQuery"/>
+        <activity android:name=".AppLockActivity"/>
+        <!--拦截界面要在一个单独的栈中 否则就会返回手机卫士当中-->
+
+        <activity android:name=".AnitVirusActivity"/>
+        <activity android:name=".CacheClearActivity"/>
+        <activity android:name=".BaseCacheClearActivity"/>
+        <activity android:name=".SdCacheClearActivity"/>
+        <activity android:name=".TrafficActivity"/>
+        <activity
+            android:name=".EnterPasdActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"/>
+        <!--true 是不显示最近的任务图标  false是显示-->
+        <receiver
+            android:name=".Receiver.BootReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+
+                <!-- 开机启动完成的广播 -->
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".Receiver.SmsReceiver"
+            android:description="@string/sample_device_admin_description"
+            android:enabled="true"
+            android:exported="true"
+            android:label="@string/sample_device_admin"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/devive_admin_sample"/>
+            <intent-filter>
+
+                <!-- 系统短信的广播 -->
+                <action android:name="android.provide.Telephony.SMS_RECEIVED"/>
+                <!--设备管理器-->
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
+            </intent-filter>
+        </receiver>
+        <!--窗口小部件-->
+        <receiver android:name=".Receiver.MyAppWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/appwid_info"/>
+        </receiver>
+
+        <!-- 获取位置信息的服务 -->
+        <service android:name=".Service.LocationService"/>
+        <!--来电归属地显示-->
+        <service android:name=".Service.AddressService"/>
+        <!--黑名单拦截的服务-->
+        <service android:name=".Service.BlackNumberService"/>
+        <!--窗口小部件-->
+        <service android:name=".Service.WidgetService"/>
+        <!--程序锁  看门狗-->
+        <service android:name=".Service.WatchDogService"/>
+
+    </application>
+
+</manifest>

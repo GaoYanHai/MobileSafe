@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <SlidingDrawer
+        android:handle="@+id/handle"
+        android:content="@+id/content"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@id/handle"
+            android:background="@drawable/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:paddingTop="5dp"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:id="@+id/tv_traffic1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:paddingTop="5dp"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:id="@+id/tv_traffic2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:paddingTop="5dp"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:id="@+id/tv_traffic3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:paddingTop="5dp"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:id="@+id/tv_traffic4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </SlidingDrawer>
+
+</LinearLayout>

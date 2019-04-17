@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="45dp"
+        android:layout_height="45dp"/>
+
+    <TextView
+        android:textColor="#000"
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/iv_icon"
+        android:text="应用名称"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/tv_memory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_name"
+        android:layout_toRightOf="@+id/iv_icon"
+        android:text="内存占用大小"
+        android:textSize="18sp"/>
+    <ImageView
+        android:id="@+id/iv_delete"
+        android:background="@drawable/selector_blacknumber_btn_bg"
+        android:layout_alignParentRight="true"
+        android:layout_width="35dp"
+        android:layout_height="35dp"/>
+
+</RelativeLayout>
